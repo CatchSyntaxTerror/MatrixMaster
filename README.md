@@ -1,4 +1,4 @@
-# MatrixMaster3000
+# MatrixMaster
 
 *An interactive Linear Algebra calculator built with Java and JavaFX.*
 
