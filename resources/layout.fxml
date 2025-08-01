@@ -28,18 +28,18 @@
             stylesheets="@style.css">
 
     <VBox alignment="TOP_CENTER" spacing="30"
-          AnchorPane.topAnchor="20" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+          AnchorPane.topAnchor="50" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
           stylesheets="@style.css" styleClass="root-pane">
 
 
     <!-- Welcome Message -->
-        <VBox spacing="5" alignment="CENTER">
+        <VBox spacing="10" alignment="CENTER">
             <Label text="Welcome to Matrix Master" styleClass="welcome-header"/>
             <Label text="What would you like to do?" styleClass="welcome-subtext"/>
         </VBox>
 
         <!-- Button Grid -->
-        <GridPane fx:id="buttonGrid" hgap="20" vgap="15" alignment="CENTER">
+        <GridPane fx:id="buttonGrid" hgap="25" vgap="20" alignment="CENTER">
             <!-- Column 1: Matrix -->
             <Button text="Add Matrices" styleClass="menu-button" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
             <Button text="Subtract Matrices" styleClass="menu-button" GridPane.rowIndex="1" GridPane.columnIndex="0"/>

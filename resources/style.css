@@ -18,14 +18,14 @@
 
 /* Welcome Header */
 .welcome-header {
-    -fx-font-size: 24px;
+    -fx-font-size: 32px;
     -fx-text-fill: #e0e0ff;
     -fx-font-weight: bold;
 }
 
 /* Subtext */
 .welcome-subtext {
-    -fx-font-size: 16px;
+    -fx-font-size: 24px;
     -fx-text-fill: #b0b0d0;
     -fx-padding: 0 0 20 0;
 }
