@@ -49,9 +49,9 @@ Replace `/path/to/javafx-sdk-21/lib` with the actual path to your JavaFX SDK's `
 
 ### Classes to Implement
 
-- [ ] `Matrix` (started)
+- [x] `Matrix` 
 - [ ] `Vector` (started)
-- [ ] `MatrixOperations`
+- [ ] `MatrixOperations` (started)
 - [ ] `VectorOperations`
 - [ ] `EigenSolver`
 - [ ] `InputController`
@@ -63,10 +63,10 @@ Replace `/path/to/javafx-sdk-21/lib` with the actual path to your JavaFX SDK's `
 
 ### Buttons to Implement
 
-- [ ] Add Matrices
-- [ ] Subtract Matrices
-- [ ] Multiply Matrices
-- [ ] Inverse Matrix
+- [x] Add Matrices
+- [x] Subtract Matrices
+- [x] Multiply Matrices
+- [x] Transposed Matrix
 - [ ] Determinant
 - [ ] RREF
 - [ ] Eigenvalues

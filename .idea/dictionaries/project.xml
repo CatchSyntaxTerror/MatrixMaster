@@ -2,6 +2,7 @@
   <dictionary name="project">
     <words>
       <w>diagonalization</w>
+      <w>rref</w>
     </words>
   </dictionary>
 </component>

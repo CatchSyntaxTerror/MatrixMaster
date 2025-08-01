@@ -23,8 +23,8 @@ public class Main extends Application {
 
         // Get screen size
         Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-        double width = screenBounds.getWidth() / 2;
-        double height = screenBounds.getHeight() / 2;
+        double width = screenBounds.getWidth() * 0.66;
+        double height = screenBounds.getHeight() * 0.66;
 
         // Set scene with half screen size
         Scene scene = new Scene(root, width, height);
