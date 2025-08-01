@@ -2,7 +2,7 @@
 
 *An interactive Linear Algebra calculator built with Java and JavaFX.*
 
-MatrixMaster3000 is your toolkit for performing basic matrix math to eigenvalue domination.
+MatrixMaster is your toolkit for performing basic matrix math to eigenvalue domination.
 
 ---
 
@@ -20,7 +20,7 @@ MatrixMaster3000 is your toolkit for performing basic matrix math to eigenvalue 
 
 ## How to Run
 
-MatrixMaster3000 is distributed as a runnable `.jar` file. You’ll need **Java 17+** and **JavaFX 21** installed.
+MatrixMaster is distributed as a runnable `.jar` file. You’ll need **Java 17+** and **JavaFX 21** installed.
 
 ### Launch command:
 
