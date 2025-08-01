@@ -66,9 +66,9 @@ Replace `/path/to/javafx-sdk-21/lib` with the actual path to your JavaFX SDK's `
 - [x] Add Matrices
 - [x] Subtract Matrices
 - [x] Multiply Matrices
-- [x] Transposed Matrix
-- [ ] Determinant
-- [ ] RREF
+- [x] Inverse Matrix
+- [x] Determinant
+- [x] RREF
 - [ ] Eigenvalues
 - [ ] Eigenvectors
 - [ ] Dot Product
