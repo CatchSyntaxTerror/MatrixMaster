@@ -1,0 +1,50 @@
+/*
+ * style.css
+ *
+ * Author: Youssef Amin
+ * Created for: MatrixMaster
+
+ * This stylesheet defines the visual style of the MatrixMaster GUI.
+ * It features a sleek purple and blue color scheme with modern UI spacing.
+ * Styled components:
+ * - .root: Sets background
+ * - .welcome-header, .welcome-subtext: Top welcome labels
+ * - .menu-button: Main menu operation buttons
+ */
+
+.root {
+    -fx-background-color: #1e1e2f;
+}
+
+/* Welcome Header */
+.welcome-header {
+    -fx-font-size: 24px;
+    -fx-text-fill: #e0e0ff;
+    -fx-font-weight: bold;
+}
+
+/* Subtext */
+.welcome-subtext {
+    -fx-font-size: 16px;
+    -fx-text-fill: #b0b0d0;
+    -fx-padding: 0 0 20 0;
+}
+
+/* Menu Buttons */
+.menu-button {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 10;
+    -fx-background-insets: 0;
+    -fx-background-color: linear-gradient(to bottom, #5e60ce, #3a0ca3);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 6, 0.3, 0, 2);
+    -fx-cursor: hand;
+}
+
+/* Hover effect */
+.menu-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #7209b7, #3a0ca3);
+    -fx-text-fill: #ffffff;
+}
