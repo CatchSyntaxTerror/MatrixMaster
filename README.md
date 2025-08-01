@@ -27,7 +27,7 @@ MatrixMaster is distributed as a runnable `.jar` file. You’ll need **Java 17+*
 ```bash
 java --module-path /path/to/javafx-sdk-21/lib \
      --add-modules javafx.controls,javafx.fxml \
-     -jar MatrixMaster3000.jar
+     -jar MatrixMaster.jar
 ```
 
 Replace `/path/to/javafx-sdk-21/lib` with the actual path to your JavaFX SDK's `lib` folder.
