@@ -51,7 +51,7 @@ Replace `/path/to/javafx-sdk-21/lib` with the actual path to your JavaFX SDK's `
 
 - [x] `Matrix` 
 - [ ] `Vector` (started)
-- [ ] `MatrixOperations` (started)
+- [x] `MatrixOperations`
 - [ ] `VectorOperations`
 - [ ] `EigenSolver`
 - [ ] `InputController`
