@@ -15,6 +15,7 @@ import java.io.PrintStream;
  */
 public class MatrixTester {
 
+    static int passed = 0;
     /**
      * Runs all matrix operation tests and writes output to docs/matrix_test_output.txt.
      */
@@ -132,12 +133,14 @@ public class MatrixTester {
      * Tests determinant calculation.
      */
     private static void testDeterminant() {
+
         Matrix m = new Matrix(new double[][]{
                 {1, 2},
                 {3, 4}
         });
         double expected = -2.0;
         double result = MatrixOperations.determinant(m);
+        double end = System.nanoTime();
         System.out.println("=== Determinant Test ===");
         System.out.println("Input: \n" + m);
         System.out.println("Expected: " + expected);

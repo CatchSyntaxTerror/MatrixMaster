@@ -2,11 +2,14 @@ package operations;
 
 import model.Matrix;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 /**
  * Provides static methods for core matrix operations used throughout the app.
  * Includes functionality for addition, subtraction, multiplication, inversion,
  * determinant calculation, and row reduction to RREF.
- *
+ * <p>
  * This class serves as the computational engine for matrix-based tasks.
  *
  * @author Youssef Amin
@@ -16,6 +19,7 @@ public class MatrixOperations {
 
     /**
      * Adds two matrices element-wise.
+     *
      * @param a the first matrix
      * @param b the second matrix
      * @return a new matrix that is the element-wise sum of a and b
@@ -37,6 +41,7 @@ public class MatrixOperations {
 
     /**
      * Subtracts matrix b from matrix a element-wise.
+     *
      * @param a the first matrix
      * @param b the second matrix to subtract from a
      * @return a new matrix that is the result of a - b
@@ -58,6 +63,7 @@ public class MatrixOperations {
 
     /**
      * Multiplies two matrices using standard matrix multiplication rules.
+     *
      * @param a the left matrix
      * @param b the right matrix
      * @return a new matrix that is the product of a and b
@@ -174,31 +180,11 @@ public class MatrixOperations {
     }
 
 
-
     /**
-     * Returns the transpose of a matrix.
-     * Swaps rows with columns.
-     * @param m the matrix to transpose
-     * @return the transposed matrix
-     */
-    public static Matrix transpose(Matrix m) {
-        int rows = m.getNumRow();
-        int cols = m.getNumCol();
-        double[][] transposed = new double[cols][rows];
-        double[][] data = m.getData();
-
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                transposed[j][i] = data[i][j];
-            }
-        }
-        return new Matrix(transposed);
-    }
-
-    /**
-     * Computes the determinant of a square matrix using Laplace expansion.
-     * @param m the input square matrix
-     * @return the determinant value
+     * Computes the determinant of a square matrix using recursive cofactor expansion.
+     *
+     * @param m the matrix whose determinant is to be calculated
+     * @return the determinant of the matrix
      * @throws IllegalArgumentException if the matrix is not square
      */
     public static double determinant(Matrix m) {
@@ -206,47 +192,37 @@ public class MatrixOperations {
             throw new IllegalArgumentException("Determinant is only defined for square matrices.");
         }
 
-        int n = m.getNumRow();
-        double[][] data = m.getData();
-
-        if (n == 1) return data[0][0];
-        if (n == 2) return data[0][0] * data[1][1] - data[0][1] * data[1][0];
-
-        double det = 0.0;
-        for (int col = 0; col < n; col++) {
-            double sign = (col % 2 == 0) ? 1 : -1;
-            Matrix minor = getMinor(m, col);
-            det += sign * data[0][col] * determinant(minor);
-        }
-
-        return det;
+        return getDet(m.getData(), m.getNumRow());
     }
 
     /**
-     * Returns the minor of a matrix by removing the specified row and column.
-     * @param matrix the original matrix
-     * @param colToRemove the column to remove
-     * @return the minor matrix
+     * Recursively computes the determinant of a matrix using cofactor expansion.
+     *
+     * @param mat the matrix as a 2D double array
+     * @param n   the size (number of rows or columns) of the matrix
+     * @return the determinant value
      */
-    private static Matrix getMinor(Matrix matrix, int colToRemove) {
-        int size = matrix.getNumRow();
-        double[][] original = matrix.getData();
-        double[][] minor = new double[size - 1][size - 1];
+    private static double getDet(double[][] mat, int n) {
+        if (n == 1) return mat[0][0];
+        if (n == 2) return mat[0][0] * mat[1][1] - mat[0][1] * mat[1][0];
 
-        int r = 0;
-        for (int i = 0; i < size; i++) {
-            if (i == 0) continue;
-            int c = 0;
-            for (int j = 0; j < size; j++) {
-                if (j == colToRemove) continue;
-                minor[r][c] = original[i][j];
-                c++;
+        double res = 0.0;
+        for (int col = 0; col < n; col++) {
+            double[][] sub = new double[n - 1][n - 1];
+            for (int i = 1; i < n; i++) {
+                int subcol = 0;
+                for (int j = 0; j < n; j++) {
+                    if (j == col) continue;
+                    sub[i - 1][subcol++] = mat[i][j];
+                }
             }
-            r++;
+            double sign = (col % 2 == 0) ? 1 : -1;
+            res += sign * mat[0][col] * getDet(sub, n - 1);
         }
 
-        return new Matrix(minor);
+        return res;
     }
+
 
     /**
      * Computes the Reduced Row Echelon Form (RREF) of a matrix using Gauss-Jordan elimination.
@@ -320,9 +296,9 @@ public class MatrixOperations {
     }
 
 
-
     /**
      * Validates that two matrices have the same dimensions.
+     *
      * @param a the first matrix
      * @param b the second matrix
      * @throws IllegalArgumentException if matrix dimensions don't match
